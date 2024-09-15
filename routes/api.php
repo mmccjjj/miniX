@@ -9,10 +9,6 @@ Route::get('/posts', [PostController::class, 'index']);
 Route::post('/posts', [PostController::class, 'store']);
 Route::get('/posts/{id}', [PostController::class, 'show']);
 
-Route::get('/themas', [ThemaController::class, 'index']);
-Route::post('/themas', [ThemaController::class, 'store']);
-Route::get('/themas/{id}', [ThemaController::class, 'show']);
-
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');

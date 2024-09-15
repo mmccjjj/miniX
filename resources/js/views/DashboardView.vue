@@ -8,7 +8,7 @@ const { logout } = useAuthStore();
 
 const handleLogout = () => {
     logout();
-    router.push("/login");
+    //router.push("/login");
 };
 
 const posts = ref([]);
