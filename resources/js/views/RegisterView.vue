@@ -28,7 +28,7 @@ const handleRegister = async () => {
 </script>
 
 <template>
-    <div>
+    <div class="content">
         <form method="POST" @submit.prevent="handleRegister">
             <div class="form-group">
                 <label for="name">Name:</label>

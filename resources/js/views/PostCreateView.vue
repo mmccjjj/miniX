@@ -23,24 +23,38 @@ const handleCreate = async () => {
 </script>
 
 <template>
-    <div>
-        <div v-if="alertMessage">{{ alertMessage }}</div>
-        <form method="POST" @submit.prevent="handleCreate">
-            <div class="form-group">
-                <label for="title">Titel:</label>
-                <input type="text" id="title" name="title" v-model="title" />
+    <div class="content">
+        <div class="createElement">
+            <div v-if="alertMessage">{{ alertMessage }}</div>
+            <div class="fullTitle">
+                <h1>Post erstellen</h1>
+                <p class="title2">Was möchtest Du mitteilen?</p>
             </div>
-
-            <div class="form-group">
-                <label for="content">Content:</label>
-                <textarea
-                    id="content"
-                    name="content"
-                    v-model="content"
-                    placeholder="Was gibts neuse?"
-                ></textarea>
-                <button>submit</button>
-            </div>
-        </form>
+            <form method="POST" @submit.prevent="handleCreate">
+                <div class="form-group">
+                    <label for="title">Titel</label><br />
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        v-model="title"
+                        placeholder="Dein Titel..."
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="content">Text</label><br />
+                    <textarea
+                        id="content"
+                        name="content"
+                        v-model="content"
+                        placeholder="Was gibts neuse?"
+                    ></textarea
+                    ><br />
+                    <button>Post speichern</button>
+                </div>
+            </form>
+        </div>
     </div>
 </template>
+
+<style scoped src="../../css/postCreate.css"></style>

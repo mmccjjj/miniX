@@ -1,34 +1,38 @@
 <script setup>
-import { ref, onMounted } from "vue";
-import { RouterLink } from "vue-router";
+import { ref, onMounted, computed } from "vue";
+import { RouterLink, useRouter, useRoute } from "vue-router";
 import { authClient, useAuthStore } from "@/store/AuthStore";
 import { storeToRefs } from "pinia";
 const { authUser } = storeToRefs(useAuthStore());
 const { logout } = useAuthStore();
+const router = useRouter();
+const route = useRoute();
 
 const handleLogout = () => {
     logout();
-    //router.push("/login");
+    router.push("/");
 };
+
+const underlineClass = computed(() => {
+    if (route.name === "home") return "underline";
+    return "";
+});
 </script>
 
 <template>
     <header>
-        <p class="title">MINI-X</p>
+        <RouterLink to="/" class="title link"><p>MINI-X</p> </RouterLink>
         <div class="nav">
             <nav>
-                <RouterLink to="/">Home</RouterLink>
-                <RouterLink to="/dashboard" v-if="authUser"
-                    >Dashboard</RouterLink
+                <RouterLink
+                    to="/"
+                    v-if="authUser"
+                    class="link home"
+                    :class="underlineClass"
+                    >Meine Tweets</RouterLink
                 >
                 <RouterLink :to="{ name: 'post-create' }" v-if="authUser"
-                    >New Post</RouterLink
-                >
-                <RouterLink to="/register" v-if="authUser == null"
-                    >Register</RouterLink
-                >
-                <a href="#" v-if="authUser" @click.prevent="handleLogout"
-                    >Logout</a
+                    ><button>Post Erstellen</button></RouterLink
                 >
             </nav>
         </div>

@@ -12,14 +12,9 @@
     width: 768px;
     height: 473px;
     padding: 40px;
+    background-color: #fff;
 
 }
-
-h1{
-    font-weight: 700;
-    font-size: 32px;
-}
-
 
 .sub{
     font-weight: 400;
@@ -37,6 +32,8 @@ label{
 input{
     width: 681px;
     height: 56px;
+    font-size: 25px;
+    padding: 5px;
 }
 
 .controll{

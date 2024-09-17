@@ -2,6 +2,8 @@
 import { ref, onMounted } from "vue";
 import { authClient } from "@/store/AuthStore";
 import { useRoute } from "vue-router";
+import router from "@/router";
+import postDeleteButton from "../components/Buttons/PostButtonDelete.vue";
 
 const route = useRoute();
 const post = ref([]);
@@ -22,12 +24,15 @@ onMounted(() => {
 });
 
 //TODO Variable ID einfügen dass der richtige post aktuallisiert wird
-const handleCreate = async () => {
+const handleUpdate = async (id) => {
     try {
-        const res = await authClient.post("/api/posts", {
+        const res = await authClient.put(`/api/posts/${id}`, {
             title: title.value,
             content: content.value,
         });
+        if (res.status == 200) {
+            router.push({ name: "home" });
+        }
     } catch (e) {
         alert("Etwas ist schief gelaufen");
         console.log();
@@ -36,8 +41,8 @@ const handleCreate = async () => {
 </script>
 
 <template>
-    <div>
-        <form method="POST" @submit.prevent="handleCreate">
+    <div class="content">
+        <form method="POST" @submit.prevent="handleUpdate(post_id)">
             <div class="form-group">
                 <label for="title">Titel:</label>
                 <input type="text" id="title" name="title" v-model="title" />
@@ -51,7 +56,7 @@ const handleCreate = async () => {
                     v-model="content"
                     placeholder="Was gibts neuse?"
                 ></textarea>
-                <button>submit</button>
+                <button>Speichern</button>
             </div>
         </form>
     </div>

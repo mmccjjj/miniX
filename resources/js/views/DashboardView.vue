@@ -8,7 +8,6 @@ const { logout } = useAuthStore();
 
 const handleLogout = () => {
     logout();
-    //router.push("/login");
 };
 
 const posts = ref([]);
@@ -23,7 +22,7 @@ onMounted(async () => {
 });
 </script>
 <template>
-    <div>
+    <div class="content">
         <h1>Dashboard View</h1>
         <p>Welcome, {{ authUser.name }}</p>
         <button @click="handleLogout">Logout</button>

@@ -2,6 +2,8 @@ header {
     display: flex;
     justify-content: space-between;
     height: 104px;
+    background-color: #fff;
+    padding: 0 156px 0 156px;
 }
 
 .nav {
@@ -12,5 +14,37 @@ header {
 .title {
     font-weight: 900;
     font-size: 24px;
-    margin: auto 0 auto 150px;
+    margin: auto 0 auto 0;
+}
+
+
+button{
+    width: 161px;
+    height: 39px;
+    border-radius: 50px;
+    border-style: none;
+    background-color: #1D9BF0;
+    color: white;
+    font-size: 16px;
+
+}
+
+.link{
+    text-decoration: none;
+    color: #000;
+}
+
+.underline{
+    display: inline;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 90% 3px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    padding-bottom: 8px; 
+}
+
+.home{
+  font-weight: 900;
+  font-size: 24px;  
+  margin-right: 46px;
 }

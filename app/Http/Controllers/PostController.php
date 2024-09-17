@@ -16,6 +16,20 @@ class PostController extends Controller
         return Post::all();
     }
 
+    public function getMyPosts(Request $request)
+    {
+
+        $post = post::where('user_id', '=', $request->user()->id)->get();
+        return response()->json(['posts' => $post], 200);
+    }
+
+    public function getByUserID(Request $request, $user_id)
+    {
+
+        $post = post::where('user_id', '=', $user_id)->get();
+        return response()->json(['posts' => $post], 200);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -23,12 +37,15 @@ class PostController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string',
-            'content' => 'required|string'
+            'content' => 'required|string',
+
+
         ]);
 
         Post::create([
             'title' => $validated['title'],
-            'content' => $validated['content']
+            'content' => $validated['content'],
+            'user_id' => $request->user()->id,
         ]);
         return response()->json(['message' => 'Post created successfully'], 201);
     }
@@ -45,16 +62,40 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string',
+            'content' => 'required|string'
+        ]);
+
+        $post = Post::findOrFail($id);
+
+        if ($request->user()->id !== $post->user->id) {
+            return response()->json(['message' => 'You are not the owner!'], 401);
+        }
+
+        $post->update([
+            'title' => $validated['title'],
+            'content' => $validated['content']
+        ]);
+
+        $post->save();
+
+        return response()->json(['message' => 'Post updated successfully'], 200);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        if ($request->user()->id !== $post->user->id) {
+            return response()->json(['message' => 'You are not the owner!'], 401);
+        }
+
+        $post->delete();
+        return response()->json(['message' => 'Pos deletedsuccesfully'], 204);
     }
 }

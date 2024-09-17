@@ -1,0 +1,31 @@
+.miniTitle{
+    font-weight: 700;
+    font-size: 16px;
+    color: #888888;
+    margin-top: 81px;
+
+}
+
+
+
+h1{
+    margin-bottom: 37px;
+}
+
+.postsContainer{
+    margin: 0 auto 0 auto;
+}
+
+li{
+    list-style: none;
+    background-color: #fff;
+    width: 768px;
+    height: 199px;
+    border-radius: 8px;
+    padding: 17px  52px 27px 37px;
+}
+ul{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 8px;
+}
