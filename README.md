@@ -1,66 +1,37 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+![alt text](https://github.com/mmccjjj/miniX/blob/main/Titel.png?raw=true)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Mini-X
 
-## About Laravel
+Mini-X ist ein Projekt, das als kleine Version der Social-Media-Plattform "X" entwickelt wurde. Ziel war es, die grundlegende Funktionalität einer Social-Media-Plattform zu implementieren. Dabei wurde **Laravel** für das Backend und **Vue.js** für das Frontend verwendet.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Das Projekt umfasst folgende Kernfunktionen:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 1. Anzeige aller Posts
 
-## Learning Laravel
+Die Hauptseite zeigt eine Liste aller vorhandenen Posts an. Diese Übersicht ermöglicht es den Benutzern, schnell einen Überblick über die geposteten Inhalte zu erhalten.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 2. Anzeige eines einzelnen Posts
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Ein Benutzer kann auf einen einzelnen Post klicken, um detaillierte Informationen dazu anzuzeigen. Dies beinhaltet den Titel, den Inhalt sowie das Erstellungsdatum des Posts.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 3. Neuer Post erstellen
 
-## Laravel Sponsors
+Benutzer haben die Möglichkeit, einen neuen Post zu erstellen. Hierzu wird ein Formular bereitgestellt, in dem Titel und Inhalt des Posts eingegeben werden können. Nach der Erstellung wird der neue Post zur Liste aller Posts hinzugefügt.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 4. Post bearbeiten
 
-### Premium Partners
+Posts können nachträglich bearbeitet werden. Der Benutzer kann den Titel oder den Inhalt eines bereits bestehenden Posts anpassen. Änderungen werden sofort in der Post-Ansicht und in der Übersicht reflektiert.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 5. Post löschen
 
-## Contributing
+Es ist möglich, einen Post zu löschen. Nach der Bestätigung wird der Post permanent entfernt und erscheint nicht mehr in der Liste der Posts oder in der Detailansicht.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Technologie-Stack
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-   **Backend**: Laravel
+-   **Frontend**: Vue.js
+-   **Datenbank**: MySQL
+-   **Stile**: CSS/SCSS
+-   **Build-Tools**: Vite
