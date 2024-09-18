@@ -7,6 +7,7 @@ const { authUser } = storeToRefs(useAuthStore());
 const { logout } = useAuthStore();
 const router = useRouter();
 const route = useRoute();
+const { getAuthUser } = useAuthStore();
 
 const handleLogout = () => {
     logout();
@@ -16,6 +17,10 @@ const handleLogout = () => {
 const underlineClass = computed(() => {
     if (route.name === "home") return "underline";
     return "";
+});
+
+onMounted(async () => {
+    await getAuthUser();
 });
 </script>
 

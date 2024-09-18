@@ -40,7 +40,7 @@ fetchPosts();
         <p v-if="alertMessage">{{ alertMessage }}</p>
         <ul>
             <li v-for="post in posts" :key="post.id">
-                <p>{{ formatDate(post.created_at) }}</p>
+                <p class="date">{{ formatDate(post.created_at) }}</p>
                 <h2>{{ post.title }}</h2>
                 <p>{{ post.content }}</p>
                 <RouterLink

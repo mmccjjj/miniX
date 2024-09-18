@@ -1,30 +1,13 @@
-.fullTitle{
-    margin: 108px 0 31px 0;
-
+.postEditElement{
+    width: 768px;
+    margin: 0 auto 0 auto;
 }
-
-.title2{
-    font-weight: 400;
-    font-size: 24px;
-    color: #666;
-}
-
 form{
     width: 768px;
     height: 444px;
     margin: 0 auto 0 auto;
     padding: 44px 47px 95px 40px;
     background-color: #fff;
-}
-
-#title{
-    width: 681px;
-    height: 56px;
-    border-radius: 4px;
-    box-shadow: none;
-    border: 1px solid #999999; 
-    font-size: 20px;
-    padding: 5px;
 }
 
 #content{
@@ -38,6 +21,20 @@ form{
     padding: 5px;
 }
 
+#title{
+    width: 681px;
+    height: 56px;
+    border-radius: 4px;
+    box-shadow: none;
+    border: 1px solid #999999; 
+    font-size: 20px;
+    padding: 5px;
+}
+
+h1{
+    margin: 108px 0 31px 0;
+}
+
 button{
     width: 140px;
     height: 38px;
@@ -49,17 +46,10 @@ button{
     margin-top: 31px;
     
 }
-
 label{
     font-size: 24px;
     color: #444;
 }
-
-.createElement{
-    width: 768px;
-    margin: 0 auto 0 auto;
-}
-
 input{
     margin-bottom: 31px;
 }

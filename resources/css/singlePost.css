@@ -1,0 +1,38 @@
+.singlePostElement{
+    width: 768px;
+    margin: 0 auto 0 auto;
+}
+
+.editButton{
+    width: 146px;
+    height: 38px;
+    background-color: #222;
+    border-radius: 8px;
+    border-style: none;
+    color: #fff;
+    margin-right: 5px;
+
+}
+
+.buttons{
+    margin-top: 55px;
+}
+
+.dateTitle{
+    font-weight: 700;
+    font-size: 16px;
+    color: #888;
+    margin-top: 81px;
+}
+
+h2{
+    margin-top: 33px;
+    font-size: 32px;
+
+}
+
+.postText{
+    margin-top: 12px;
+    font-size: 24px;
+    color: #444;
+}

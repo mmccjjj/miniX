@@ -14,14 +14,12 @@ const email = ref("");
 const password = ref("");
 
 const handleLogin = async () => {
-    // wir geben die email und password Werte an die login Funktion in unserem Store weiter
-    await login({ email: email.value, password: password.value });
-
-    // nach dem Login holen wir uns den authentifizierten User um ihn im Store zu speichern
+    try {
+        await login({ email: email.value, password: password.value });
+    } catch (error) {
+        alert("Login fehlgeschlagen: Ungültige Email oder Passwort.");
+    }
     const res = await getAuthUser();
-
-    // wenn der Status 200 ist, leiten wir den Benutzer auf die Dashboard-Seite weiter
-    //if (res.status === 200) router.push("/dashboard");
 };
 </script>
 <template>

@@ -29,3 +29,20 @@ ul{
     flex-direction: column-reverse;
     gap: 8px;
 }
+
+.date{
+    text-align: right;
+    font-size: 14px;
+    color: #888;
+
+}
+
+button{
+    width: 131px;
+    height: 38px;
+    background-color: #222;
+    color: #fff;
+    border-style: none;
+    border-radius: 8px;
+    margin-top: 24px;
+}

@@ -17,8 +17,7 @@ const getPost = async () => {
 };
 
 onMounted(async () => {
-    getPost();
-    await getAuthUser();
+    await getPost();
 });
 </script>
 

@@ -1,0 +1,61 @@
+.registerElement{
+    width: 768px;
+    margin: 0 auto 0 auto;
+   
+}
+.fullTitle{
+    margin: 108px 0 31px 0;
+
+}
+
+.title2{
+    font-weight: 400;
+    font-size: 24px;
+    color: #666;
+}
+
+.subTitle{
+    margin-bottom: 32px;
+}
+
+.submitArea{
+    display: flex;
+    justify-content: space-between;
+}
+
+input{
+    width: 681px;
+    height: 56px;
+    border-radius: 4px;
+    border: 1px solid #999;
+    margin-bottom: 32px;
+    font-size: 25px;
+    padding: 5px;
+}
+
+form{
+    background-color: #fff;
+    padding: 42px 40px 0 40px;
+}
+
+button{
+    width: 85px;
+    height: 38px;
+    background-color: #1D9BF0;
+    color: #fff;
+    border-radius: 8px;
+    border-style: none;
+    font-size: 14px;
+    
+    
+}
+
+label{
+    font-size: 24px;
+    color: #444;
+}
+
+.loginLink{
+    font-size: 14px;
+    color: #444;
+}

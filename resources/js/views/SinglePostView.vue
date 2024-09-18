@@ -33,17 +33,33 @@ onMounted(fetchPost);
 </script>
 
 <template>
-    <div v-if="post" class="content">
-        <p>Post vom {{ formatDate(post.created_at) }}</p>
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.content }}</p>
-        <!-- Zurück zum Post-Feed -->
-        <router-link :to="{ name: 'post-edit', params: { id: post.id } }"
-            ><button>Bearbeiten</button></router-link
-        >
-        <postDeleteButton type="button" :post_id="route.params.id" />
-    </div>
-    <div v-else>
-        <p>{{ alertMessage }}</p>
+    <div class="content">
+        <div class="singlePostElement">
+            <div v-if="post">
+                <p class="dateTitle">
+                    Post vom {{ formatDate(post.created_at) }}
+                </p>
+                <h2>{{ post.title }}</h2>
+                <p class="postText">{{ post.content }}</p>
+                <!-- Zurück zum Post-Feed -->
+                <div class="buttons">
+                    <router-link
+                        :to="{ name: 'post-edit', params: { id: post.id } }"
+                        ><button class="editButton">
+                            Post bearbeiten
+                        </button></router-link
+                    >
+                    <postDeleteButton
+                        type="button"
+                        :post_id="route.params.id"
+                    />
+                </div>
+            </div>
+            <div v-else>
+                <p>{{ alertMessage }}</p>
+            </div>
+        </div>
     </div>
 </template>
+
+<style scoped src="../../css/singlePost.css"></style>

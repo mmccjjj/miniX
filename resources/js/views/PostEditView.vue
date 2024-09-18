@@ -42,22 +42,32 @@ const handleUpdate = async (id) => {
 
 <template>
     <div class="content">
-        <form method="POST" @submit.prevent="handleUpdate(post_id)">
-            <div class="form-group">
-                <label for="title">Titel:</label>
-                <input type="text" id="title" name="title" v-model="title" />
-            </div>
-
-            <div class="form-group">
-                <label for="content">Content:</label>
-                <textarea
-                    id="content"
-                    name="content"
-                    v-model="content"
-                    placeholder="Was gibts neuse?"
-                ></textarea>
-                <button>Speichern</button>
-            </div>
-        </form>
+        <div class="postEditElement">
+            <h1>Post bearbeiten</h1>
+            <form method="POST" @submit.prevent="handleUpdate(post_id)">
+                <div class="form-group">
+                    <label for="title">Titel:</label><br />
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        v-model="title"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="content">Content:</label><br />
+                    <textarea
+                        id="content"
+                        name="content"
+                        v-model="content"
+                        placeholder="Was gibts neuse?"
+                    ></textarea
+                    ><br />
+                    <button>Post updaten</button>
+                </div>
+            </form>
+        </div>
     </div>
 </template>
+
+<style scoped src="../../css/postEdit.css"></style>

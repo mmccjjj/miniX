@@ -1,10 +1,12 @@
 <script setup>
 import { ref } from "vue";
 import { authClient } from "@/store/AuthStore";
+import { useRouter } from "vue-router";
 
 const title = ref("");
 const content = ref("");
 const alertMessage = ref("");
+const router = useRouter();
 
 const handleCreate = async () => {
     try {
@@ -13,11 +15,10 @@ const handleCreate = async () => {
             content: content.value,
         });
 
-        if (res.status == 201)
-            alertMessage.value = "Dein Beitrag wurde erstellt!";
+        if (res.status == 201) router.push({ name: "home" });
     } catch (e) {
         alert("Etwas ist schief gelaufen");
-        console.log();
+        console.log(e);
     }
 };
 </script>
