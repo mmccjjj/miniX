@@ -12,22 +12,6 @@ const router = createRouter({
             name: "home",
             component: HomeView,
         },
-        {
-            path: "/dashboard",
-            name: "dashboard",
-            // route level code-splitting
-            // this generates a separate chunk (Dashboard.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import("../views/DashboardView.vue"),
-            // die Meta-Informationen verwenden wir um den Zugriff zu schützen
-            meta: { requiresAuth: true },
-        },
-        {
-            // Hier brauchen wir keine Meta-Informationen, da diese Route für nicht authentifizierte User zugänglich sein soll.
-            path: "/login",
-            name: "login",
-            component: () => import("../views/LoginView.vue"),
-        },
 
         {
             // Hier brauchen wir keine Meta-Informationen, da diese Route für nicht authentifizierte User zugänglich sein soll.
@@ -41,6 +25,7 @@ const router = createRouter({
             path: "/posts/create",
             name: "post-create",
             component: () => import("../views/PostCreateView.vue"),
+            meta: { requiresAuth: true },
         },
 
         {
@@ -48,6 +33,7 @@ const router = createRouter({
             path: "/posts/edit/:id",
             name: "post-edit",
             component: () => import("../views/PostEditView.vue"),
+            meta: { requiresAuth: true },
         },
 
         {
@@ -58,13 +44,6 @@ const router = createRouter({
         },
 
         
-
-        {
-            // Hier brauchen wir keine Meta-Informationen, da diese Route für nicht authentifizierte User zugänglich sein soll.
-            path: "/posts",
-            name: "posts",
-            component: () => import("../views/PostsView.vue"),
-        },
     ],
 });
 
@@ -75,7 +54,7 @@ router.beforeEach(async (to, from, next) => {
 
     if (reqAuth && !authUser.value) {
         await getAuthUser();
-        if (!authUser.value) next("/login");
+        if (!authUser.value) next("/");
         next();
     } else {
         next(); // make sure to always call next()!
@@ -83,3 +62,5 @@ router.beforeEach(async (to, from, next) => {
 });
 
 export default router;
+
+//TODO Guard Anwenden
